@@ -1,0 +1,87 @@
+<!Doctype html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" type="text/css"  href="Teste.css">
+    <link rel="stylesheet" type="text"  href="form.html">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Nunito|Varela+Round" rel="stylesheet">
+    <!-- font-family: 'Nunito', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+    font-family: 'Lato', sans-serif;-->
+
+<title>Leo</title> 
+</head>
+
+<body>
+
+
+
+
+  
+  <table id="myTable">
+ 
+    <tr >
+      <td >pera</td>
+      <td>gato</td>
+      <td>azul</td>
+      <td>
+          <button onclick="remove(this)">Remover</button>
+      </td>
+    </tr>
+
+  </table>
+
+ <button onclick="inserirLinha()">Inserir linha</button>
+
+
+
+<script>
+
+  function inserirLinha() {
+   var tb = document.getElementById("myTable");
+   var tr = document.createElement('tr');
+   var tds =
+   [document.createElement('td'),
+   document.createElement('td'),
+   document.createElement('td'),
+   document.createElement('button')];
+
+   for (var i = 0;  i < tds.length; i++) {
+    tr.appendChild(tds[i]);
+  }
+
+  
+  tb.appendChild(tr);
+}
+
+
+/*function inserirLinha() {
+   
+  var tb = document.getElementById("myTable");
+   var tr = tb.insertRow(0);
+   var td1 = tr.insertCell(0);
+   var td2 = tr.insertCell(1);
+   var td3 = tr.insertCell(2);
+    var td4 = tr.insertCell(3);
+
+  td1.innerHTML = "";
+  td2.innerHTML = "";
+  td3.innerHTML = "";
+  td4.innerHTML = "<button>";
+
+}
+
+  /*
+  
+function remove(this){
+   var tr = button.parentElement.parentElement;
+    var tbody = tr.parentElement;
+    tbody.removeChild(tr);
+
+}*/
+</script>
+
+</body>
+</html>

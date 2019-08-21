@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css"  href="Teste.css">
+</head>
+<body>
+
+<table class="borda">
+  <thead>
+    <tr >
+      <th class="borda">First Name</th>
+      <th class="borda">Last Name</th>
+      <th class="borda">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+</tbody>
+
+</table>
+<form class="info">
+<p> What is your name?</p>
+  <input type="text" name="FName" id="firstName" value="">
+ 
+<p> What is your last name?</p>
+  <input type="text" name="LName" id="lastName" value="">
+
+<p> How old are you?</p>
+  <input type="text" name="Age" id="age" value="">
+
+  <button type="button" onclick="resultado()">click aqui</button>
+
+</form>
+
+<script>
+  
+
+function resultado(){
+  var i;
+  var res = '';
+  var a =
+[document.getElementById('firstName').value,
+document.getElementById('lastName').value, 
+document.getElementById('age').value];
+
+//console.log(a[0], a[1], a[2]);
+
+for (i = 0;  i < a.length; i++) {
+  res = res + a[i]  + " ";
+}
+
+console.log(res);
+
+document.getElementById('firstName').value ="";
+document.getElementById('lastName').value = ""; 
+document.getElementById('age').value = "";
+}
+
+
+
+ /*}
+ var b =
+  [document.getElementById('firstName').value ="",
+document.getElementById('lastName').value = "", 
+document.getElementById('age').value = ""];
+
+console.log(b[0], b[1], b[2];
+
+
+<script>
+document.getElementsByClassName("borda")[1].style.border = "1px solid red" ;
+
+*/
+
+
+
+
+/*
+
+function resultado(){
+var x = document.getElementById('firstName').value 
+var y = document.getElementById('lastName').value 
+var z = document.getElementById('age').value 
+var a = [x,y,z]
+
+ console.log(a)
+}*/
+ 
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title></title>
+
+	</head>
+	<body>
+
+	<table id="myTable" border="1">
+ 
+    <tr>
+      <td>pera</td>
+      <td>gato</td>
+      <td>azul</td>
+      <td>
+          
+      </td>
+    </tr>
+
+  </table>
+
+ <button onclick="inserirLinha()">Inserir linha</button>
+ <button onclick="inserirLinhaJQuery()">Inserir linha JQuery</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+	function inserirLinha() {
+   		var tb = document.getElementById("myTable");
+   		
+      var tr = document.createElement('tr');
+   		var tds =
+   			[document.createElement('td'),
+   			document.createElement('td'),
+   			document.createElement('td'),
+   			document.createElement('td')];
+
+        tds[0].innerText = 'A'
+        tds[1].innerText = 'B'
+        tds[2].innerText = 'C'
+
+   		var button = document.createElement('button');
+			button.innerText = 'Algum Botao'
+   		
+   		tds[3].appendChild(button);
+
+   		for (var i = 0;  i < tds.length; i++) {
+    		tr.appendChild(tds[i]);
+  		}
+
+  		tb.appendChild(tr);
+
+      /* Podemos iterar nas trs da table */
+      var trs = tb.getElementsByTagName('tr') /* Isso me retorna um array com todas as trs da table myTable*/
+      for (var i = 0; i < trs.length; i++) {
+          var tds = trs[i].getElementsByTagName('td'); /* Isso me retorna um array com todas as td da trs[i]*/
+
+          /* Podemos ter um for dentro de outro for */
+          for (var j = 0; j < tds.length; j++) {
+              console.log(tds[j].innerHTML)
+          }
+      }
+	}
+
+
+	function inserirLinhaJQuery() {
+
+		var tb = $("#myTable");
+
+    /* isso é só um string ainda */
+		var novaLinha =  '<tr>'
+        novaLinha +=    '<td>A</td>' 
+        novaLinha +=    '<td>B</td>' 
+        novaLinha +=    '<td>C</td>' 
+        novaLinha +=    '<td><button>Algum Botao JQuery</button></td>' 
+        novaLinha += '</tr>'
+
+    /* O JQuery sabe transfomar string em elements */
+    tb.append(novaLinha);
+
+    /* Podemos iterar nas trs da table */
+    var trs = $("#myTable tr") /* Isso me retorna um array com todas as trs da table myTable*/
+    trs.each(function (i, tr) {
+      
+      var tds = $(tr).find('td'); /* Isso me retorna um array com todas as td da tr*/
+
+      /* Podemos ter um each dentro de outro each */
+      tds.each(function (j, td) {
+        console.log($(td).html())
+      })
+    })
+
+   /*
+    Tambem podemos criar individualmente
+
+    var tb = $("#myTable");
+ 		var tr = $('<tr>');
+ 		var tds =
+ 			[$('<td>'),
+ 			$('<td>'),
+ 			$('<td>'),
+ 			$('<td>')];
+
+ 		var button = $('<button>');
+		button.text('Algum Botao')
+ 		
+ 		tds[3].append(button);
+
+ 		for (var i = 0;  i < tds.length; i++) {
+  		tr.append(tds[i]);
+		}
+
+		tb.append(tr);
+    */
+	}
+
+</script>
+</body>
+</html>

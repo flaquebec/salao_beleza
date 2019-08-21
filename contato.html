@@ -1,0 +1,108 @@
+<!Doctype html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" type="text/css"  href="laysitecss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans+Condensed:300|Poiret+One|Quicksand" rel="stylesheet">
+<!--font-family: 'Poiret One', cursive;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Dosis', sans-serif; -->
+
+<title>Lays - Website</title> 
+</head>
+
+<body>
+  <!-- linha onde esta o logo. -->
+  <div class="row" id="divLogo">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 logo">
+          <img src="fotos/logolavisage1.png" id=fotoLogo>
+        </div>
+  </div>
+
+  <!-- container da barra de pesquisa. -->
+  <div class="row" id="containerBarraPesquisa">
+    <div class="col-xs-12 col-sm-12">
+      <p class="col-xs-12col-sm-12 barraPesquisa"><i class="barra fa fa-bars" onmouseover="menuaparece()" onmouseout="menufica()" onclick="menusome()" ></i></p>
+    </div>
+ </div>
+
+    <div >
+      <nav class="row" >
+        <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="menu">
+          <li class="col-xs-12 col-sm-12"> <a href="index.html" class="linkmenu"> Home </a></li>
+          <li class="col-xs-12 col-sm-12 "> <a href="quemsomos.html" class="linkmenu"> Quem Somos </a></li>
+          <li class="col-xs-12 col-sm-12 "> <a href="servicos.html"class="linkmenu">Serviços </a></li>
+          <li class="col-xs-12 col-sm-12 "> <a href="contato.html" class="linkmenu">Contato </a></li>
+        </ul> 
+      </nav>
+    </div>
+
+ <div class="row espaco">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espaco">
+      <p class="textsepara col-xs-12 col-sm-12 col-md-12 col-lg-12">  Contato</p>
+    </div>
+  </div>
+
+
+ <div id="divFormulario" class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div id="divDados" class="row col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <form action=" " method="post">
+    <div id="formNome">
+      <span> Nome:</span>
+      <input type="text" name="nome" id="nome" class="inputForm">
+    </div>
+
+    <div id="formEmail">
+      <span> Email:</span>
+      <input type="text" name="email" id="email" class="inputForm">
+    </div>
+    
+    <div id="formTel">
+      <span> Telefone:</span>
+      <input type="text" name="telefone" id="telefone" class="inputForm">
+    </div>
+    
+    <div >
+      <textarea id="formContainerTexto">Some text...</textarea>
+    </div>
+
+
+       <div id="formBtSalvar">
+      <button id="salvar">Salvar</button>
+      
+    </div>
+  </form>
+</div>
+</div>
+
+
+  
+<footer>
+  <div class="row">
+    <div class="boxInfo col-xs-12 col-sm-12 col-lg-12">
+      <p>
+        <a href="mailto:hello@your-email.com"class="email">hello@your-email.com</a>
+      </p>
+
+      <p>
+      <img src="fotos/whatslogo.png" id="wlogo">
+      <a href="https://api.whatsapp.com/send?phone=5511996990455" target="_blank">11 99699-0455</a>
+      </p>  
+         
+      <p>Av. Ibar 453, Poá, S.Paulo </p><br/><br/>
+
+      <p class="copyright">Copyright &#169; 2019 by Flavia Camargo</p>
+    </div>
+  </div>
+
+  </footer> 
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   var pessoas = ["Jose da Silva"];
+    
+    function addPessoaOnArrayPessoas(nome1, nome2, nome3, nome4) {
+
+    		pessoas.push( nome1, nome2, nome3, nome4)
+    		return pessoas
+    }
+
+    console.log(addPessoaOnArrayPessoas("Maria dos Santos", "Leticia Andrade", "Paulo Cordeiro", "Mario Souza"));
+
+   var pessoas = ["Jose da Silva"];
+    
+    function addPessoaOnArrayPessoas() {
+
+    		pessoas.push("Maria dos Santos", "Leticia Andrade", "Paulo Cordeiro", "Mario Souza");
+    		return pessoas
+    }
+
+    console.log(addPessoaOnArrayPessoas());
+<script>
+var pessoa = {
+	nome: 'Flavia',
+	sobrenome: 'Camargo',
+	idade: 43,
+	profissao: 'SDR',
+	filhos:['Julie', 'David', 'Daniel']
+};
+function dados() {
+	var txt = "";
+	var x;
+for (x in pessoa) {
+ txt += " " + pessoa.filhos.join(",");
+//  txt += pessoa[x] + " ";
+   
+ }
+return txt;
+}
+console.log(dados());
+
+//console.log(pessoa.filhos.join(',')); /  txt += pessoa[x] + " ";
+
+</script>
+</body>
+</html>

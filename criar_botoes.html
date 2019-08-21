@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title></title>
+
+  </head>
+  <body>
+
+    <div id="teste"></div>
+    
+    <button onclick="adicionaBotao()">Adiciona Botao</button>
+    <button onclick="adicionaBotaoJQuery()">Adiciona Botao Jquery</button>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  
+    /*
+    Podemos utilizar uma funcao com parametros
+    assim reduzimos a quantidade de codigo
+    */
+    function botao(texto, cor, borda) {
+
+      var btn = document.createElement('button');
+      btn.innerText = texto;
+      btn.style.backgroundColor = cor;
+      btn.style.border = borda;
+
+      /* retornar o button é necessário pois se nao o appendChild nao vai adicionar */
+      return btn;
+    }
+        
+    function adicionaBotao() {
+      document.getElementById('teste').appendChild(botao("Enviar", "red", "1px solid blue"))
+      document.getElementById('teste').appendChild(botao("Cancelar", "blue", "2px solid red"))
+    }
+
+
+    function botaoJQuery(texto, cor, borda) {
+
+      /* O jquery tranforma uma string com HTML em elementos */
+      var button = $('<button style="background-color: ' + cor + '; border:' + borda + '">' + texto +  '</button>')
+
+      /* Podemos tambem criar um elemento vazio e modificar suas propriedades pelo jquery */
+      var button1 = $('<button>');
+      button1.html(texto)
+      button1.css({
+        'background-color': cor,
+        'border': borda
+      })
+
+      return button;
+      // return button1;
+    }
+        
+    function adicionaBotaoJQuery() {
+      $('#teste').append(botaoJQuery("Enviar", "yellow", "1px solid green"))
+      $('#teste').append(botaoJQuery("Cancelar", "pink", "2px solid black"))
+    }
+
+  </script>
+</body>
+</html>

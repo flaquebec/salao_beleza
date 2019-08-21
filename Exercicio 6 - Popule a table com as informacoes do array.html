@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Exercicio 6 - Popule a table com as informacoes do array</title>
+  <style>
+    
+    table, th, td {
+      border: 1px solid #000;
+    }
+
+    #totalPessoas {
+      text-align: right
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table id="tblPessoas">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Sexo</th>
+        <th>Idade</th>
+        <th>Quantidade de Filhos</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">
+          Total:
+        </td>
+        <td id="totalPessoas"></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+    
+    const pessoas = [
+                    {
+                      nome: "José da Silva", 
+                      sexo: 'M',
+                      idade: 59,
+                      filhos: [],
+                      saudacao: function () { alert('Ola, sou o Jose') }
+                    }, 
+                    {
+                      nome: "Maria da Silva", 
+                      sexo: 'F',
+                      idade: 66,
+                      filhos: [],
+                      saudacao: function () { alert('Ola, sou a Maria, estou na melhor idade') }
+                    }, 
+                    {
+                      nome: "Pedro Moreira", 
+                      sexo: 'M',
+                      idade: 32,
+                      filhos: [{
+                        nome: "Felipe Moreira",
+                        sexo: 'M',
+                        idade: 2,
+                      },
+                      {
+                        nome: "Fabiana Moreira",
+                        sexo: 'F',
+                        idade: 6,
+                      }],
+                      saudacao: function () { alert('Opa, sou o Pedro') }
+                    }, 
+                    {
+                      nome: "Gustavo Batista", 
+                      sexo: 'M',
+                      idade: 29,
+                      filhos: [],
+                      saudacao: function () { alert('Fala, sou o Gustavo') }
+                    }, 
+                    {
+                      nome: "Deise Souza", 
+                      sexo: 'F',
+                      idade: 49,
+                      filhos: [{
+                        nome: "Renata Souza", 
+                        sexo: 'M',
+                        idade: 14,
+                      }],
+                      saudacao: function () { alert('Muito prazer, me chamo Deise') }
+                    }
+                  ];
+
+
+
+      /*
+      Utilizando o array pessoas, popule a table tblPessoas com as informacoes de nome, sexo, idade, quantidade de filhos,
+      Se a idade for maior que 65 a pessoa é considerada idosa
+      Informe o total de pessoas da td totalPessoas
+        Tips: 
+          Utilize appendChild
+          Utilize o for para iterar a array pessoas
+          Ao chamar a funcao addRow:
+            Passe o boleano no parametro idoso,
+            Passe a quantidade de filhos no parametro quantidadeDeFilhos,
+            Passe a saudacao, nao se preocupe com ela, apenas estou colocando para vc ver que é possivel passar funcoes por parametro
+      */
+      function popular() {
+        const tbody = document.getElementById('tblPessoas').querySelector('tbody')
+        var recebePessoas;
+        /*  Faça seu for aqui */
+        for (var i = 0;  i < pessoas.length; i++) {
+        recebePessoas = pessoas[i]
+        tbody.appendChild(
+
+            
+          addRow(recebePessoas.nome, recebePessoas.sexo, recebePessoas.idade, recebePessoas.idade > 65, recebePesssoas.filhos.length, recebePessoas.saudacao)
+          )
+
+            
+        }
+
+
+
+        document.getElementById('totalPessoas').innerHTML = tbody.querySelectorAll('tr').length;
+      }
+
+      /*
+      Utilize esta funcao para adicionar a TR
+      Se idoso for true, entao coloque a cor da linha em vermelho
+      */
+      function addRow(nome, sexo, idade, idoso, quantidadeDeFilhos, funcaoSaudacao) {
+
+
+        const tr = document.createElement('tr');
+        if (idoso) {
+          tr.style.color = 'red'
+        }
+        tr.onclick = funcaoSaudacao;
+        var tds = [document.createElement('td'),
+                    document.createElement('td'),
+                    document.createElement('td'),
+                    document.createElement('td')];
+           
+         //document.querySelector("tbody").appendChild(tr);
+
+          for (var i = 0;  i < tds.length; i++) {
+        tr.appendChild(tds[i]);
+      }
+       
+        tds[0].innerText = nome
+        tds[1].innerText = sexo
+        tds[2].innerText = idade
+        tds[3].innerText = quantidadeDeFilhos;
+
+
+
+
+        /* Cria aqui as demais TDs e as adicione na const tr */
+
+
+        return tr;
+      }
+
+
+      /* Chama a funcao ao carregar a pagina */
+      popular();
+
+  </script>
+</body>
+</html>
